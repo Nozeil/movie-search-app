@@ -1,0 +1,31 @@
+.link {
+  padding: var(--spacing-10);
+  border-radius: var(--mantine-radius-md);
+  line-height: var(--mantine-line-height-xs);
+  transition: var(--duration-300);
+}
+
+.stack {
+  margin-top: var(--spacing-80);
+}
+
+.label {
+  font-size: var(--mantine-font-size-md);
+}
+
+.link[data-active] {
+  font-weight: var(--font-bold);
+  color: var(--mantine-color-purple-5);
+
+  @mixin hover {
+    color: var(--mantine-color-purple-5);
+    background-color: var(--mantine-color-purple-2);
+  }
+}
+
+.link {
+  @mixin hover {
+    color: var(--mantine-color-purple-4);
+    background-color: inherit;
+  }
+}

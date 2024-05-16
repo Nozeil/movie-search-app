@@ -1,0 +1,4 @@
+.navbar {
+  padding: var(--mantine-spacing-lg);
+  background-color: var(--mantine-color-purple-1);
+}

@@ -1,0 +1,6 @@
+:root {
+  --spacing-0: 0;
+  --spacing-2: rem(2px);
+  --spacing-10: rem(10px);
+  --spacing-80: rem(80px);
+}
