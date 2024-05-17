@@ -1,7 +1,8 @@
 import { AppShell } from '@mantine/core';
 
-import { PAGE_TITLES, ROUTES } from '../../_constants';
-import { Logo } from '../logo/logo';
+import { Logo } from '@/components/logo/logo';
+import { PAGE_TITLES, ROUTES } from '@/constants/index';
+
 import styles from './nav-bar.module.css';
 import { NavMenu } from './nav-menu/nav-menu';
 

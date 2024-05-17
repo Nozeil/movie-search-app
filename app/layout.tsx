@@ -1,11 +1,12 @@
-import './_styles/styles.css';
+import '@/styles/styles.css';
 import '@mantine/core/styles.css';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import type { ReactNode } from 'react';
 
+import { inter } from '@/fonts/index';
+
 import { theme } from '../theme';
-import { inter } from './_fonts';
 
 export const metadata = {
   title: 'Arrow Flicks',

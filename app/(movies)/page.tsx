@@ -1,5 +1,5 @@
-import { PageTitle } from '../_components/page-title/page-title';
-import { PAGE_TITLES } from '../_constants';
+import { PageTitle } from '@/components/page-title/page-title';
+import { PAGE_TITLES } from '@/constants/index';
 
 const MoviesPage = () => (
   <>

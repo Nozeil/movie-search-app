@@ -2,7 +2,7 @@
 
 import { createTheme, rem } from '@mantine/core';
 
-import { inter } from './app/_fonts';
+import { inter } from './fonts';
 
 export const theme = createTheme({
   fontFamily: inter.style.fontFamily,

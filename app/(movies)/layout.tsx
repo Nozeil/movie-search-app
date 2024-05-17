@@ -3,7 +3,8 @@
 import { AppShell, Container } from '@mantine/core';
 import type { ReactNode } from 'react';
 
-import { NavBar } from '../_components/nav-bar/nav-bar';
+import { NavBar } from '@/components/nav-bar/nav-bar';
+
 import styles from './layout.module.css';
 
 const MoviesLayot = ({ children }: { children: ReactNode }) => (

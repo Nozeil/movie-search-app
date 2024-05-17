@@ -1,5 +1,5 @@
-import { PageTitle } from 'app/_components/page-title/page-title';
-import { PAGE_TITLES } from 'app/_constants';
+import { PageTitle } from '@/components/page-title/page-title';
+import { PAGE_TITLES } from '@/constants/index';
 
 const Rated = () => (
   <>
