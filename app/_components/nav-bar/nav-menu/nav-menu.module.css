@@ -1,5 +1,5 @@
 .link {
-  padding: var(--spacing-10);
+  padding: var(--mantine-spacing-xs);
   border-radius: var(--mantine-radius-md);
   line-height: var(--mantine-line-height-xs);
   transition: var(--duration-300);
@@ -14,7 +14,7 @@
 }
 
 .link[data-active] {
-  font-weight: var(--font-bold);
+  font-weight: var(--mantine-heading-font-weight);
   color: var(--mantine-color-purple-5);
 
   @mixin hover {

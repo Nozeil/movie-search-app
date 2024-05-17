@@ -1,6 +1,7 @@
 :root {
   --spacing-0: 0;
   --spacing-2: rem(2px);
-  --spacing-10: rem(10px);
   --spacing-80: rem(80px);
+  --spacing-82: rem(82px);
+  --spacing-90: rem(90px);
 }

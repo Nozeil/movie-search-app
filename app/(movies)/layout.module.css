@@ -1,0 +1,7 @@
+.main {
+  background-color: var(--mantine-color-grey-1);
+}
+
+.container {
+  padding: var(--mantine-spacing-xl) var(--spacing-90) var(--spacing-82);
+}

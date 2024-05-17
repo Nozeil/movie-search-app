@@ -1,7 +1,4 @@
-import './_styles/variables/spacing.css';
-import './_styles/variables/letter-spacing.css';
-import './_styles/variables/font-weight.css';
-import './_styles/variables/transition-duration.css';
+import './_styles/styles.css';
 import '@mantine/core/styles.css';
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
@@ -16,7 +13,7 @@ export const metadata = {
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
-  <html lang="en">
+  <html lang="en" className={inter.className}>
     <head>
       <ColorSchemeScript />
       <link rel="shortcut icon" href="/favicon.svg" />
@@ -25,7 +22,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
         content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
       />
     </head>
-    <body className={inter.className}>
+    <body>
       <MantineProvider theme={theme}>{children}</MantineProvider>
     </body>
   </html>
