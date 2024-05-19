@@ -6,7 +6,7 @@
 
 .comboboxOption:global(.mantine-Combobox-option),
 .selectOption:global(.mantine-Select-option) {
-  padding: var(--spacing-8);
+  padding: var(--mantine-spacing-xss);
   line-height: var(--mantine-line-height-xs);
   border-radius: var(--mantine-radius-md);
   transition: ease-in-out var(--duration-300);
