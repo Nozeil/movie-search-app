@@ -2,10 +2,15 @@
 
 import { createTheme, rem } from '@mantine/core';
 
-import { inter } from './fonts';
+import { inter } from '../fonts';
+import { components } from './components/components';
 
 export const theme = createTheme({
   fontFamily: inter.style.fontFamily,
+  fontSizes: {
+    md: rem(14),
+  },
+
   headings: {
     fontFamily: inter.style.fontFamily,
     sizes: {
@@ -13,6 +18,7 @@ export const theme = createTheme({
       h2: { fontSize: rem(24) }, //initial 26px
     },
   },
+
   colors: {
     grey: ['', '#F5F5F6', '#EAEBED', '#D5D6DC', '', '#ACADB9', '#7B7C88', '', '', ''],
     purple: ['', '#F2ECFA', '#E5D5FA', '#D1B4F8', '#BD93F7', '#9854F6', '#541F9D', '', '', ''],
@@ -22,4 +28,6 @@ export const theme = createTheme({
     lg: rem(24), //initial 20px
     xl: rem(40), // initial 32px
   },
+
+  components,
 });

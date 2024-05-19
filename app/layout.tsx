@@ -1,12 +1,11 @@
-import '@/styles/styles.css';
 import '@mantine/core/styles.css';
+import '@/styles/styles.css';
 
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript } from '@mantine/core';
 import type { ReactNode } from 'react';
 
+import { Providers } from '@/components/providers';
 import { inter } from '@/fonts/index';
-
-import { theme } from '../theme';
 
 export const metadata = {
   title: 'Arrow Flicks',
@@ -24,7 +23,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
       />
     </head>
     <body>
-      <MantineProvider theme={theme}>{children}</MantineProvider>
+      <Providers>{children}</Providers>
     </body>
   </html>
 );

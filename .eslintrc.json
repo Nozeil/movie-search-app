@@ -21,7 +21,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
   ],
   "plugins": [
     "prettier",
@@ -35,7 +36,7 @@
   "rules": {
     "prefer-const": "warn",
     "no-var": "warn",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "object-shorthand": "warn",
     "quote-props": ["warn", "as-needed"],
     "@typescript-eslint/array-type": [
@@ -51,6 +52,7 @@
         "objectLiteralTypeAssertions": "never"
       }
     ],
+    "@typescript-eslint/no-unused-vars": "warn",
     "react/jsx-fragments": ["warn", "syntax"],
     "react/jsx-filename-extension": [
       "warn",

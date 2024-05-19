@@ -24,7 +24,11 @@
       "@/components/*": ["components/*"],
       "@/constants/*": ["constants/*"],
       "@/fonts/*": ["fonts/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/services/*": ["services/*"],
+      "@/models/*": ["models/*"],
+      "@/utils/*": ["utils/*"],
+      "@/theme/*": ["theme/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
