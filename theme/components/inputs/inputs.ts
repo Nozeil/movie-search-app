@@ -19,5 +19,17 @@ export const inputs: MantineThemeOverride['components'] = {
     defaultProps: {
       radius: 'md',
     },
+
+    vars: (theme, props) => {
+      if (props.size === 'md') {
+        return {
+          input: {
+            '--input-fz': theme.fontSizes.sm,
+          },
+        };
+      }
+
+      return {};
+    },
   }),
 };

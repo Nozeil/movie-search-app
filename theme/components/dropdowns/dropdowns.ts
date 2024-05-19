@@ -41,5 +41,20 @@ export const dropdowns: MantineThemeOverride['components'] = {
         type: 'auto',
       },
     },
+
+    vars: (theme, props) => {
+      if (props.size === 'md') {
+        return {
+          input: {
+            '--input-fz': theme.fontSizes.sm,
+          },
+          option: {
+            '--combobox-option-fz': theme.fontSizes.sm,
+          },
+        };
+      }
+
+      return {};
+    },
   }),
 };
