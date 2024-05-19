@@ -7,6 +7,18 @@ export const inputs: MantineThemeOverride['components'] = {
     classNames: {
       input: styles.input,
     },
+
+    vars: (theme, props) => {
+      if (props.size === 'md') {
+        return {
+          wrapper: {
+            '--input-fz': theme.fontSizes.sm,
+          },
+        };
+      }
+
+      return { wrapper: {} };
+    },
   }),
 
   InputPlaceholder: InputPlaceholder.extend({

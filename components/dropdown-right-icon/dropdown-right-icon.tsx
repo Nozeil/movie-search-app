@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 
-import DownIcon from '@/components/dropdown-right-icon/down-icon/down-icon';
+import { DownIcon } from '@/components/dropdown-right-icon/down-icon/down-icon';
 
 import styles from './dropdown-right-icon.module.css';
 

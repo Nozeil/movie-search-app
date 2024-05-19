@@ -17,4 +17,3 @@ export const DownIcon = ({ className, ...props }: SVGProps<SVGSVGElement>) => (
     <path strokeLinecap="round" strokeWidth={1.5} d="m5 9 6.22 5.33a1.2 1.2 0 0 0 1.56 0L19 9" />
   </svg>
 );
-export default DownIcon;

@@ -22,7 +22,7 @@ export const FiltersGroup = ({
   stackProps,
   titleProps,
 }: FiltersGroupProps) => (
-  <Group {...groupProps}>
+  <Group grow={true} {...groupProps}>
     {filters.map(({ title, children }) => (
       <Stack key={uuidv4()} gap="xss" {...stackProps}>
         <Title order={5} {...titleProps}>

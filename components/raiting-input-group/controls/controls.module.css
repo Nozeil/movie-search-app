@@ -1,0 +1,12 @@
+.upIcon,
+.downIcon {
+  stroke: var(--mantine-color-grey-5);
+
+  @mixin hover {
+    stroke: var(--mantine-color-purple-4);
+  }
+
+  &:active {
+    stroke: var(--mantine-color-purple-5);
+  }
+}

@@ -18,3 +18,8 @@ export const RELEASE_YEARS = {
   MAX: new Date().getUTCFullYear(),
   MIN: 1886,
 } as const;
+
+export const RATINGS = {
+  MIN: 0,
+  MAX: 10,
+} as const;
