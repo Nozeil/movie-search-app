@@ -29,7 +29,8 @@
       "@/models/*": ["models/*"],
       "@/utils/*": ["utils/*"],
       "@/theme/*": ["theme/*"],
-      "@/typings/*": ["typings/*"]
+      "@/typings/*": ["typings/*"],
+      "@/stores/*": ["stores/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

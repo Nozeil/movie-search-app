@@ -9,7 +9,7 @@
   padding: var(--mantine-spacing-xss);
   line-height: var(--mantine-line-height-xs);
   border-radius: var(--mantine-radius-md);
-  transition: ease-in-out var(--duration-300);
+  transition: var(--ease-in-out-300);
 
   @mixin hover {
     padding-left: var(--mantine-spacing-sm);

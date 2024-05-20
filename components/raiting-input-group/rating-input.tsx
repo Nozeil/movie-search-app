@@ -1,6 +1,6 @@
 'use client';
 
-import { NumberInput, type NumberInputHandlers, NumberInputProps } from '@mantine/core';
+import { NumberInput, type NumberInputHandlers, type NumberInputProps } from '@mantine/core';
 import { useRef } from 'react';
 
 import { RATINGS } from '@/constants/index';

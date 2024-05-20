@@ -2,7 +2,7 @@
   padding: var(--mantine-spacing-xs);
   border-radius: var(--mantine-radius-md);
   line-height: var(--mantine-line-height-xs);
-  transition: var(--duration-300);
+  transition: var(--ease-in-out-300);
 }
 
 .stack {

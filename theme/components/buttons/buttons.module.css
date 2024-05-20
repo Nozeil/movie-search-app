@@ -1,0 +1,3 @@
+.button {
+  transition: var(--ease-in-out-300);
+}

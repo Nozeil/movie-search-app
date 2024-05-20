@@ -1,5 +1,5 @@
 .icon {
-  transition: ease-in-out var(--duration-300);
+  transition: var(--ease-in-out-300);
 }
 
 .iconRotateTop {

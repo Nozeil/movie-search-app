@@ -2,7 +2,7 @@
   padding-left: var(--mantine-spacing-sm);
   border-color: var(--mantine-color-grey-3);
   caret-color: var(--mantine-color-purple-5);
-  transition: ease-in-out var(--duration-300);
+  transition: var(--ease-in-out-300);
 
   @mixin hover {
     border-color: var(--mantine-color-purple-5);

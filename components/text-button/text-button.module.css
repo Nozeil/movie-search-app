@@ -1,0 +1,20 @@
+.button {
+  flex-shrink: 0;
+  padding: var(--spacing-0);
+  font-weight: var(--font-medium);
+  color: var(--mantine-color-purple-5);
+
+  @mixin hover {
+    color: var(--mantine-color-purple-4);
+    background-color: inherit;
+  }
+
+  &:active {
+    color: var(--mantine-color-purple-6);
+  }
+}
+
+.button:disabled {
+  color: var(--mantine-color-grey-6);
+  background-color: inherit;
+}
