@@ -1,10 +1,11 @@
 import { Group } from '@mantine/core';
+import { v4 as uuidv4 } from 'uuid';
 
 import { GenresMultiSelect } from '../genres-multi-select';
 import { RatingInputGroup } from '../raiting-input-group/rating-input-group';
 import { ReleaseYearSelect } from '../release-year-select';
+import { TitledStack } from '../titled-stack/titled-stack';
 import styles from './filters.module.css';
-import { FiltersGroup } from './filters-group';
 import { ResetButton } from './reset-button';
 
 const filters = [
@@ -14,8 +15,14 @@ const filters = [
 ];
 
 export const Filters = () => (
-  <Group className={styles.group} align="flex-end" wrap="nowrap">
-    <FiltersGroup filters={filters} />
+  <Group align="flex-end">
+    <Group className={styles.filtersGroup}>
+      {filters.map(({ title, children }) => (
+        <TitledStack key={uuidv4()} title={title}>
+          {children}
+        </TitledStack>
+      ))}
+    </Group>
     <ResetButton />
   </Group>
 );

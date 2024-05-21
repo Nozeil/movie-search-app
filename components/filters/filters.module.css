@@ -1,3 +1,4 @@
-.group {
-  width: 100%;
+.filtersGroup {
+  column-gap: var(--mantine-spacing-md);
+  row-gap: var(--mantine-spacing-xs);
 }

@@ -11,7 +11,6 @@ export const SelectWithDropdownRightIcon = (props: SelectProps) => {
   return (
     <Select
       size="md"
-      placeholder="Select release year"
       withCheckIcon={false}
       rightSection={<DropdownRightIcon isOpen={opened} />}
       onDropdownOpen={toggle}

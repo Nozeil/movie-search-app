@@ -17,5 +17,12 @@ export const ReleaseYearSelect = () => {
 
   const onChange: SelectProps['onChange'] = (value) => setReleaseYear(value);
 
-  return <SelectWithDropdownRightIcon data={data} value={releaseYear} onChange={onChange} />;
+  return (
+    <SelectWithDropdownRightIcon
+      placeholder="Select release year"
+      data={data}
+      value={releaseYear}
+      onChange={onChange}
+    />
+  );
 };

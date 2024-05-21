@@ -5,6 +5,7 @@ export const headings = createTheme({
     sizes: {
       h1: { fontSize: rem(32), lineHeight: '1.4' },
       h2: { fontSize: rem(24) },
+      h5: { lineHeight: '1.4' },
     },
   },
 });

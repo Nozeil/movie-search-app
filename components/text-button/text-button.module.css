@@ -2,6 +2,7 @@
   flex-shrink: 0;
   padding: var(--spacing-0);
   font-weight: var(--font-medium);
+  line-height: var(--mantine-line-height-xs);
   color: var(--mantine-color-purple-5);
 
   @mixin hover {
