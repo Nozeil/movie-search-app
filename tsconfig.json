@@ -30,9 +30,16 @@
       "@/utils/*": ["utils/*"],
       "@/theme/*": ["theme/*"],
       "@/typings/*": ["typings/*"],
-      "@/stores/*": ["stores/*"]
+      "@/stores/*": ["stores/*"],
+      "@/hooks/*": ["hooks/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "constants/constants.ts"
+  ],
   "exclude": ["node_modules"]
 }

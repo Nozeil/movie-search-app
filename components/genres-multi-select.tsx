@@ -1,12 +1,10 @@
 'use client';
 
 import { type ComboboxProps } from '@mantine/core';
-import { useQuery } from '@tanstack/react-query';
 import { useCallback, useMemo } from 'react';
-import { getMovieList } from 'services';
 import { useMovieFiltersStore } from 'stores/movie-filters-store/movie-filters-store';
 
-import { MovieListResponse } from '@/models/index';
+import { useGetMovieList } from '@/hooks/useGetMovieList';
 
 import { MultiSelectInputBase } from './multi-select-input-base/multi-select-input-base';
 
@@ -14,10 +12,7 @@ export const GenresMultiSelect = () => {
   const genres = useMovieFiltersStore.use.genres();
   const addGenre = useMovieFiltersStore.use.addGenre();
 
-  const { data: movieList } = useQuery<MovieListResponse>({
-    queryKey: ['movieList'],
-    queryFn: getMovieList,
-  });
+  const { data: movieList } = useGetMovieList();
 
   const genreNames = useMemo(() => {
     let initialGenreNames: string[] = [];

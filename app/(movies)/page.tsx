@@ -1,18 +1,20 @@
 import { Stack } from '@mantine/core';
 
 import { Filters } from '@/components/filters/filters';
+import { MoviesCardsWithPagination } from '@/components/movies-group/movies-group';
 import { PageTitle } from '@/components/page-title/page-title';
 import { PageWrapper } from '@/components/page-wrapper';
 import { SortSelect } from '@/components/sort-select';
-import { PAGE_TITLES } from '@/constants/index';
+import { PAGE_TITLES } from '@/constants/constants';
 
 const MoviesPage = () => (
-  <PageWrapper>
+  <PageWrapper size={980} p={0}>
     <PageTitle>{PAGE_TITLES.MOVIES}</PageTitle>
 
     <Stack align="end" gap="lg">
       <Filters />
       <SortSelect />
+      <MoviesCardsWithPagination />
     </Stack>
   </PageWrapper>
 );

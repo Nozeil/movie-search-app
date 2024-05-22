@@ -1,0 +1,22 @@
+.title {
+  color: var(--mantine-color-purple-5);
+}
+
+.year,
+.votesCount {
+  color: var(--mantine-color-grey-6);
+}
+
+.img {
+  flex-shrink: 0;
+}
+
+:where([data-mantine-color-scheme='light'])
+  .starSymbol:global(.mantine-Rating-starSymbol:where([data-filled])) {
+  fill: var(--mantine-color-purple-5);
+  stroke: var(--mantine-color-purple-5);
+}
+
+.label {
+  cursor: pointer;
+}

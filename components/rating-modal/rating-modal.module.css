@@ -1,0 +1,19 @@
+.header {
+  min-height: fit-content;
+}
+
+.close {
+  justify-content: end;
+  color: var(--mantine-color-grey-5);
+}
+
+.body {
+  --border-h: 2px;
+  padding: calc(var(--mantine-spacing-md) - var(--border-h));
+  border-top: var(--border-h) solid var(--mantine-color-grey-2);
+}
+
+.ratingRoot {
+  justify-content: space-between;
+  width: 100%;
+}

@@ -1,0 +1,5 @@
+.button {
+  &:active {
+    background-color: var(--mantine-color-purple-6);
+  }
+}

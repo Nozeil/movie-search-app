@@ -14,6 +14,17 @@ export const buttons: MantineThemeOverride['components'] = {
         return {
           root: {
             '--button-fz': theme.fontSizes.sm,
+            '--button-height': '40px',
+            '--button-padding-x': '20px',
+          },
+        };
+      }
+
+      if (props.size === 'sm') {
+        return {
+          root: {
+            '--button-height': '32px',
+            '--button-padding-x': '20px',
           },
         };
       }

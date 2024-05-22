@@ -1,0 +1,12 @@
+.text {
+  font-weight: var(--font-semibold);
+  line-height: var(--mantine-line-height-xss);
+}
+
+.label {
+  cursor: pointer;
+}
+
+.group {
+  pointer-events: none;
+}

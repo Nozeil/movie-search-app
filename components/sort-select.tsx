@@ -1,4 +1,11 @@
-import { MOVIES_SORT } from '../constants';
+'use client';
+
+import { SelectProps } from '@mantine/core';
+
+import { useMovieSortStore } from '@/stores/movies-sort-store';
+import { isMoviesSort } from '@/utils/is-movies-sort';
+
+import { MOVIES_SORT } from '../constants/constants';
 import { SelectWithDropdownRightIcon } from './select-with-dropdown-right-icon';
 import { TitledStack } from './titled-stack/titled-stack';
 
@@ -25,8 +32,19 @@ const data = [
   { label: 'Z-A Title', value: MOVIES_SORT.TITLE_DESC },
 ];
 
-export const SortSelect = () => (
-  <TitledStack title="Sort by">
-    <SelectWithDropdownRightIcon data={data} defaultValue="popularity.desc" />
-  </TitledStack>
-);
+export const SortSelect = () => {
+  const sortBy = useMovieSortStore.use.sortBy();
+  const setSortBy = useMovieSortStore.use.setSortBy();
+
+  const handleOnChange: SelectProps['onChange'] = (value) => {
+    if (isMoviesSort(value)) {
+      setSortBy(value);
+    }
+  };
+
+  return (
+    <TitledStack title="Sort by">
+      <SelectWithDropdownRightIcon data={data} defaultValue={sortBy} onChange={handleOnChange} />
+    </TitledStack>
+  );
+};

@@ -1,0 +1,4 @@
+.paper {
+  padding: var(--mantine-spacing-lg);
+  border-radius: var(--radius-12);
+}

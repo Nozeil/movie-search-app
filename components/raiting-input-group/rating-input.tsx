@@ -3,7 +3,7 @@
 import { NumberInput, type NumberInputHandlers, type NumberInputProps } from '@mantine/core';
 import { useRef } from 'react';
 
-import { RATINGS } from '@/constants/index';
+import { RATINGS } from '@/constants/constants';
 
 import { Controls } from './controls/controls';
 

@@ -4,7 +4,7 @@ import { type SelectProps } from '@mantine/core';
 import { useMemo } from 'react';
 import { useMovieFiltersStore } from 'stores/movie-filters-store/movie-filters-store';
 
-import { RELEASE_YEARS } from '@/constants/index';
+import { RELEASE_YEARS } from '@/constants/constants';
 import { createAnnualPeriod } from '@/utils/create-annual-period';
 
 import { SelectWithDropdownRightIcon } from './select-with-dropdown-right-icon';

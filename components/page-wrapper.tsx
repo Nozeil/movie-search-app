@@ -1,12 +1,15 @@
-import { Stack, StackProps } from '@mantine/core';
+import { Container, type ContainerProps, Stack, StackProps } from '@mantine/core';
 import { type ReactNode } from 'react';
 
 type PageWrapperProps = {
   children: ReactNode;
-} & StackProps;
+  stackProps?: StackProps;
+} & ContainerProps;
 
-export const PageWrapper = ({ children, ...props }: PageWrapperProps) => (
-  <Stack gap="xl" {...props}>
-    {children}
-  </Stack>
+export const PageWrapper = ({ children, stackProps, ...props }: PageWrapperProps) => (
+  <Container {...props}>
+    <Stack gap="xl" {...stackProps}>
+      {children}
+    </Stack>
+  </Container>
 );
