@@ -1,3 +1,5 @@
+import type { VideoHosts } from '../typings';
+
 export type Genre = {
   id: number;
   name: string;
@@ -81,7 +83,7 @@ export type MovieDetails = {
       iso_3166_1: string;
       name: string;
       key: string;
-      site: string;
+      site: VideoHosts;
       size: number;
       type: string;
       official: boolean;

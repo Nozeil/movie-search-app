@@ -1,0 +1,8 @@
+.title {
+  font-weight: var(--mantine-heading-font-weight);
+}
+
+.iframe {
+  border: none;
+  border-radius: var(--mantine-radius-md);
+}

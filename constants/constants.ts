@@ -43,3 +43,13 @@ export const MOVIES_SORT = {
   TITLE_DESC: 'title.desc',
   TITLE_ASC: 'title.asc',
 } as const;
+
+export const VIDEO_HOSTS = {
+  YOUTUBE: 'YouTube',
+  VIMEO: 'Vimeo',
+} as const;
+
+export const VIDEO_URLS = {
+  [VIDEO_HOSTS.YOUTUBE]: 'https://www.youtube.com/embed/',
+  [VIDEO_HOSTS.VIMEO]: 'https://player.vimeo.com/video/',
+} as const;
