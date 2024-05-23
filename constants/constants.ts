@@ -14,6 +14,7 @@ export const BASE_API_IMAGE_URL = '/themoviedb-api-img';
 export const API_URLS = {
   MOVIE_LIST: `${BASE_API_URL}/genre/movie/list`,
   DISCOVER_MOVIE: `${BASE_API_URL}/discover/movie`,
+  MOVIE_DETAILS: `${BASE_API_URL}/movie`,
 } as const;
 
 export const RELEASE_YEARS = {

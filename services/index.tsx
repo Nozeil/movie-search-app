@@ -15,3 +15,10 @@ export const discoverMovie = async (params: DiscoverMovieQueryParams) => {
   const movies = await res.json();
   return movies;
 };
+
+export const getMovieDetails = async (id: string) => {
+  const searchParams = createSearchParams({ append_to_response: 'videos' });
+  const res = await fetch(`${API_URLS.MOVIE_DETAILS}/${id}${searchParams}`);
+  const details = await res.json();
+  return details;
+};

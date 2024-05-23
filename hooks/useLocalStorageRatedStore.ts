@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import type { MoviePick } from '../typings';
+import type { PartialMoviePick } from '../typings';
 
 const KEY = 'rated';
 
-type RatedMovie = { userRating: number } & MoviePick;
+type RatedMovie = { userRating: number } & PartialMoviePick;
 
 const getRatedMovies = (): RatedMovie[] => {
   const ratedMovies = localStorage.getItem(KEY);

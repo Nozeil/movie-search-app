@@ -1,3 +1,4 @@
 .label {
+  line-height: var(--mantine-line-height-xss);
   color: var(--mantine-color-grey-6);
 }

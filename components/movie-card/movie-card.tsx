@@ -1,9 +1,11 @@
 'use client';
 
-import { Group, Stack, Text, Title } from '@mantine/core';
+import { Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+import Link from 'next/link';
+import { ReactNode } from 'react';
 
 import { BASE_API_IMAGE_URL } from '@/constants/constants';
 import { useLocalStorageRatedStore } from '@/hooks/useLocalStorageRatedStore';
@@ -14,9 +16,14 @@ import { PaperBasedWrapper } from '../paper-based-wrapper/paper-based-wrapper';
 import { RatingModal } from '../rating-modal/rating-modal';
 import { UserRatingButton } from '../user-rating-button/user-rating-button';
 import styles from './movie-card.module.css';
-import { MovieCardGenres } from './movie-card-genres/movie-card-genres';
 
-const height = 170;
+type MovieCardProps = {
+  children: ReactNode;
+  size?: 'md' | 'lg';
+} & MoviePick;
+
+const HEIGHT_MD = 170;
+const HEIGHT_LG = 352;
 
 const cx = classNames.bind(styles);
 
@@ -28,9 +35,29 @@ export const MovieCard = ({
   vote_average,
   vote_count,
   genre_ids,
-}: MoviePick) => {
+  children,
+  size = 'md',
+}: MovieCardProps) => {
   const { addMovie, removeMovie, getMovieRating } = useLocalStorageRatedStore(id);
   const [opened, { open, close }] = useDisclosure(false);
+  const theme = useMantineTheme();
+
+  const { height, imgWidth, paperWidth, stackWidth, component } =
+    size === 'md'
+      ? {
+          component: Link,
+          height: HEIGHT_MD,
+          imgWidth: 120,
+          paperWidth: { base: '100%', xl: 482 },
+          stackWidth: { base: '100%', xl: 299 },
+        }
+      : {
+          component: undefined,
+          height: HEIGHT_LG,
+          imgWidth: 250,
+          paperWidth: '100%',
+          stackWidth: '100%',
+        };
 
   const handleSave = (userRating: number) => {
     addMovie({
@@ -57,17 +84,17 @@ export const MovieCard = ({
   const ratedMovieRating = getMovieRating();
 
   return (
-    <PaperBasedWrapper w={{ base: '100%', xl: 482 }}>
+    <PaperBasedWrapper component={component} href={`/${id}`} c={theme.black} w={paperWidth}>
       <Group align="flex-start" gap="md" wrap="nowrap">
         <Image
           className={styles.img}
-          width={120}
+          width={imgWidth}
           height={height}
           src={poster_path ? `${BASE_API_IMAGE_URL}${poster_path}` : '/no-poster-sm.svg'}
           alt="poster"
         />
 
-        <Stack w={{ base: '100%', xl: 299 }} h={height} justify="space-between">
+        <Stack w={stackWidth} h={height} justify="space-between">
           <Group justify="space-between" align="flex-start" wrap="nowrap">
             <Stack gap="xss">
               <Title className={styles.title} order={4}>
@@ -104,8 +131,7 @@ export const MovieCard = ({
               {ratedMovieRating}
             </UserRatingButton>
           </Group>
-
-          <MovieCardGenres genre_ids={genre_ids} />
+          {children}
         </Stack>
       </Group>
     </PaperBasedWrapper>
