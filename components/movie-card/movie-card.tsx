@@ -1,3 +1,5 @@
+'use client';
+
 import { Group, Stack, Text, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classNames from 'classnames/bind';

@@ -2,15 +2,15 @@
 
 import { Group, NumberInputProps } from '@mantine/core';
 
-import { useMovieFiltersStore } from '@/stores/movie-filters-store/movie-filters-store';
+import { useMoviesStore } from '@/stores/movie-filters-store/movies-store';
 
 import { RatingInput } from './rating-input';
 
 export const RatingInputGroup = () => {
-  const from = useMovieFiltersStore.use.from();
-  const to = useMovieFiltersStore.use.to();
-  const setFrom = useMovieFiltersStore.use.setFrom();
-  const setTo = useMovieFiltersStore.use.setTo();
+  const from = useMoviesStore.use.from();
+  const to = useMoviesStore.use.to();
+  const setFrom = useMoviesStore.use.setFrom();
+  const setTo = useMoviesStore.use.setTo();
 
   const handleFromChange: NumberInputProps['onChange'] = (from) => setFrom(from);
   const handleToChange: NumberInputProps['onChange'] = (to) => setTo(to);

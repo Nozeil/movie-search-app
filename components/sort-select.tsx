@@ -2,7 +2,7 @@
 
 import { SelectProps } from '@mantine/core';
 
-import { useMovieSortStore } from '@/stores/movies-sort-store';
+import { useMoviesStore } from '@/stores/movie-filters-store/movies-store';
 import { isMoviesSort } from '@/utils/is-movies-sort';
 
 import { MOVIES_SORT } from '../constants/constants';
@@ -33,8 +33,8 @@ const data = [
 ];
 
 export const SortSelect = () => {
-  const sortBy = useMovieSortStore.use.sortBy();
-  const setSortBy = useMovieSortStore.use.setSortBy();
+  const sortBy = useMoviesStore.use.sortBy();
+  const setSortBy = useMoviesStore.use.setSortBy();
 
   const handleOnChange: SelectProps['onChange'] = (value) => {
     if (isMoviesSort(value)) {
@@ -44,7 +44,12 @@ export const SortSelect = () => {
 
   return (
     <TitledStack title="Sort by">
-      <SelectWithDropdownRightIcon data={data} defaultValue={sortBy} onChange={handleOnChange} />
+      <SelectWithDropdownRightIcon
+        data={data}
+        value={sortBy}
+        allowDeselect={false}
+        onChange={handleOnChange}
+      />
     </TitledStack>
   );
 };

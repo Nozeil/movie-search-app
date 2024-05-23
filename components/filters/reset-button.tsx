@@ -1,18 +1,15 @@
 'use client';
 
-import {
-  resetMovieFilters,
-  useMovieFiltersStore,
-} from '@/stores/movie-filters-store/movie-filters-store';
+import { resetMovieFilters, useMoviesStore } from '@/stores/movie-filters-store/movies-store';
 import { convertRatingToBoolean } from '@/utils/convert-rating-to-boolean';
 
 import { TextButton } from '../text-button/text-button';
 
 export const ResetButton = () => {
-  const from = useMovieFiltersStore.use.from();
-  const to = useMovieFiltersStore.use.to();
-  const year = useMovieFiltersStore.use.year();
-  const genres = useMovieFiltersStore.use.genres();
+  const from = useMoviesStore.use.from();
+  const to = useMoviesStore.use.to();
+  const year = useMoviesStore.use.year();
+  const genres = useMoviesStore.use.genres();
 
   const isFrom = convertRatingToBoolean(from);
   const isTo = convertRatingToBoolean(to);

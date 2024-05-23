@@ -1,7 +1,7 @@
-import { createTheme } from '@mantine/core';
+import { createTheme, em } from '@mantine/core';
 
 export const breakpoints = createTheme({
   breakpoints: {
-    xl: '91.1em',
+    xl: em(1457),
   },
 });

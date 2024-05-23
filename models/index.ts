@@ -16,7 +16,7 @@ export type DiscoverMovieQueryParams = {
   ['vote_average.lte']: string | number;
   ['vote_average.gte']: string | number;
   sort_by: string;
-  page: string;
+  page: number;
 };
 
 export type Movie = {
@@ -38,7 +38,7 @@ export type Movie = {
 
 export type DiscoverMovieResponse = {
   page: number;
-  results: Movie[];
+  results: (Partial<Movie> & Pick<Movie, 'id'>)[];
   total_pages: number;
   total_results: number;
 };

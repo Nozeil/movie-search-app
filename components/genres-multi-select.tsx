@@ -2,15 +2,15 @@
 
 import { type ComboboxProps } from '@mantine/core';
 import { useCallback, useMemo } from 'react';
-import { useMovieFiltersStore } from 'stores/movie-filters-store/movie-filters-store';
 
 import { useGetMovieList } from '@/hooks/useGetMovieList';
+import { useMoviesStore } from '@/stores/movie-filters-store/movies-store';
 
 import { MultiSelectInputBase } from './multi-select-input-base/multi-select-input-base';
 
 export const GenresMultiSelect = () => {
-  const genres = useMovieFiltersStore.use.genres();
-  const addGenre = useMovieFiltersStore.use.addGenre();
+  const genres = useMoviesStore.use.genres();
+  const addGenre = useMoviesStore.use.addGenre();
 
   const { data: movieList } = useGetMovieList();
 

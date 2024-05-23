@@ -1,0 +1,21 @@
+.control:global(.mantine-Pagination-control):where([data-disabled]) {
+  color: var(--mantine-color-grey-3);
+  border-color: var(--mantine-color-grey-2);
+}
+
+.control:global(.mantine-Pagination-control) {
+  border-color: var(--mantine-color-grey-3);
+
+  & svg {
+    color: var(--mantine-color-grey-6);
+  }
+}
+
+.control:global(.mantine-Pagination-control):where([data-active]) {
+  background-color: var(--mantine-color-purple-5);
+
+  @mixin hover {
+    color: var(--mantine-color-white);
+    background-color: var(--mantine-color-purple-5);
+  }
+}

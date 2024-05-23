@@ -14,3 +14,5 @@ export type MoviePick = Pick<
   | 'vote_count'
   | 'genre_ids'
 >;
+
+export type PartialMoviePick = Partial<MoviePick> & Pick<Movie, 'id'>;

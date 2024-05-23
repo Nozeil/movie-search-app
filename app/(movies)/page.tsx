@@ -1,7 +1,7 @@
 import { Stack } from '@mantine/core';
 
 import { Filters } from '@/components/filters/filters';
-import { MoviesCardsWithPagination } from '@/components/movies-group/movies-group';
+import { MoviesCardsWithPagination } from '@/components/movies-cards-with-pagination';
 import { PageTitle } from '@/components/page-title/page-title';
 import { PageWrapper } from '@/components/page-wrapper';
 import { SortSelect } from '@/components/sort-select';
