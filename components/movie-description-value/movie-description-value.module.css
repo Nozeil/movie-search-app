@@ -1,3 +1,7 @@
 .text {
   line-height: var(--mantine-line-height-xss);
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    font-size: var(--mantine-font-size-sm);
+  }
 }

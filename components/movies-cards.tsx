@@ -1,10 +1,9 @@
-import { Group } from '@mantine/core';
+import { Flex } from '@mantine/core';
 
-import type { PartialMoviePick } from '../../typings';
-import { EmptyMovies } from '../empty-movies';
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieCardGenresByIds } from '../movie-card-genres-by-ids';
-import styles from './movies-cards.module.css';
+import type { PartialMoviePick } from '../typings';
+import { EmptyMovies } from './empty-movies';
+import { MovieCard } from './movie-card/movie-card';
+import { MovieCardGenresByIds } from './movie-card-genres-by-ids';
 
 type MoviesCardsProps = {
   movies: PartialMoviePick[];
@@ -16,7 +15,7 @@ export const MoviesCards = ({ movies }: MoviesCardsProps) => {
   }
 
   return (
-    <Group className={styles.group} justify="start">
+    <Flex justify="center" wrap="wrap" gap={{ base: 'xs', lg: 'md' }}>
       {movies.map(
         ({
           id,
@@ -45,6 +44,6 @@ export const MoviesCards = ({ movies }: MoviesCardsProps) => {
           );
         },
       )}
-    </Group>
+    </Flex>
   );
 };

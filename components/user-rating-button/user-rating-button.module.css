@@ -1,4 +1,5 @@
 .text {
+  flex-shrink: 0;
   font-weight: var(--font-semibold);
   line-height: var(--mantine-line-height-xss);
 }

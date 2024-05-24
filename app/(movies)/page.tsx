@@ -1,4 +1,4 @@
-import { Stack } from '@mantine/core';
+import { Flex } from '@mantine/core';
 
 import { Filters } from '@/components/filters/filters';
 import { MoviesCardsWithPagination } from '@/components/movies-cards-with-pagination';
@@ -11,11 +11,12 @@ const MoviesPage = () => (
   <PageWrapper>
     <PageTitle>{PAGE_TITLES.MOVIES}</PageTitle>
 
-    <Stack align="end" gap="lg">
+    <Flex direction="column" align={{ base: 'center', xs: 'end' }} gap={{ base: 'sm', lg: 'lg' }}>
       <Filters />
       <SortSelect />
+
       <MoviesCardsWithPagination />
-    </Stack>
+    </Flex>
   </PageWrapper>
 );
 

@@ -4,7 +4,7 @@ import { Stack } from '@mantine/core';
 
 import { useRatedMoviesStore } from '@/stores/rated-store';
 
-import { MoviesCards } from './movies-cards/movies-cards';
+import { MoviesCards } from './movies-cards';
 import { ThreePagesPagination } from './three-pages-pagination';
 
 export const RatedMoviesCards = () => {

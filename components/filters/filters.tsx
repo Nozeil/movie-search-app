@@ -1,4 +1,4 @@
-import { Group } from '@mantine/core';
+import { Flex, Group } from '@mantine/core';
 import { v4 as uuidv4 } from 'uuid';
 
 import { GenresMultiSelect } from '../genres-multi-select';
@@ -15,7 +15,7 @@ const filters = [
 ];
 
 export const Filters = () => (
-  <Group align="flex-end">
+  <Flex align={{ base: 'center', md: 'end' }} wrap="wrap" gap="md">
     <Group className={styles.filtersGroup}>
       {filters.map(({ title, children }) => (
         <TitledStack key={uuidv4()} title={title}>
@@ -24,5 +24,5 @@ export const Filters = () => (
       ))}
     </Group>
     <ResetButton />
-  </Group>
+  </Flex>
 );

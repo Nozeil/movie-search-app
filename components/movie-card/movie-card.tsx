@@ -1,6 +1,6 @@
 'use client';
 
-import { Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
+import { Flex, Group, Stack, Text, Title, useMantineTheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
@@ -52,8 +52,8 @@ export const MovieCard = ({
           component: Link,
           height: HEIGHT_MD,
           imgWidth: 120,
-          paperWidth: { base: '100%', xl: 482 },
-          stackWidth: { base: '100%', xl: 299 },
+          paperWidth: { base: 283, xl: 482 },
+          stackWidth: { base: 200, xl: 240 },
         }
       : {
           component: undefined,
@@ -99,17 +99,17 @@ export const MovieCard = ({
 
   return (
     <PaperBasedWrapper component={component} href={`/${id}`} c={theme.black} w={paperWidth}>
-      <Group align="flex-start" gap="md" wrap="nowrap">
-        <Image
-          className={styles.img}
-          width={imgWidth}
-          height={height}
-          src={poster_path ? `${BASE_API_IMAGE_URL}${poster_path}` : '/no-poster-sm.svg'}
-          alt="poster"
-        />
+      <Flex align="flex-start" justify="space-between" wrap="nowrap" gap={{ base: 0 }}>
+        <Flex direction={{ base: 'column', xl: 'row' }} gap="md">
+          <Image
+            className={styles.img}
+            width={imgWidth}
+            height={height}
+            src={poster_path ? `${BASE_API_IMAGE_URL}${poster_path}` : '/no-poster-sm.svg'}
+            alt="poster"
+          />
 
-        <Stack w={stackWidth} h={height} justify="space-between">
-          <Group justify="space-between" align="flex-start" wrap="nowrap">
+          <Stack w={stackWidth} h={height} justify="space-between">
             <Stack gap="xss">
               <Title className={styles.title} order={4}>
                 {original_title}
@@ -132,22 +132,22 @@ export const MovieCard = ({
               onRemove={handleRemove}
             />
 
-            <UserRatingButton
-              onClick={handleAddRated}
-              ratingProps={{
-                classNames: {
-                  label: styles.label,
-                  starSymbol: cx({ [styles.starSymbol]: ratedMovieRating }),
-                },
-                value: ratedMovieRating,
-              }}
-            >
-              {ratedMovieRating}
-            </UserRatingButton>
-          </Group>
-          {children}
-        </Stack>
-      </Group>
+            {children}
+          </Stack>
+        </Flex>
+        <UserRatingButton
+          onClick={handleAddRated}
+          ratingProps={{
+            classNames: {
+              label: styles.label,
+              starSymbol: cx({ [styles.starSymbol]: ratedMovieRating }),
+            },
+            value: ratedMovieRating,
+          }}
+        >
+          {ratedMovieRating}
+        </UserRatingButton>
+      </Flex>
     </PaperBasedWrapper>
   );
 };
