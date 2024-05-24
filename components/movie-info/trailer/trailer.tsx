@@ -33,7 +33,7 @@ export const Trailer = () => {
 
   return (
     <MovieInfoChildrenWrapper title="Trailer">
-      <AspectRatio ratio={16 / 9} w={500}>
+      <AspectRatio ratio={16 / 9} maw={500}>
         <iframe
           className={styles.iframe}
           src={src}

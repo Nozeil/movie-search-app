@@ -15,7 +15,7 @@ export const MoviesCards = ({ movies }: MoviesCardsProps) => {
   }
 
   return (
-    <Flex justify="center" wrap="wrap" gap={{ base: 'xs', lg: 'md' }}>
+    <Flex wrap="wrap" gap={{ base: 'xs', lg: 'md' }}>
       {movies.map(
         ({
           id,

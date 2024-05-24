@@ -62,7 +62,7 @@ const MoviePage = ({ params }: { params: { id: string } }) => {
       <Container size={800} p={0}>
         <MovieDetailsContext.Provider value={details}>
           <Stack gap={20}>
-            <Breadcrumbs>
+            <Breadcrumbs maw={{ base: 288, xs: 'fit-content' }}>
               {breadcrumbsItems.map((item) => (
                 <Anchor
                   key={item.href}
@@ -72,11 +72,13 @@ const MoviePage = ({ params }: { params: { id: string } }) => {
                   c={theme.colors.purple[5]}
                   fz={theme.fontSizes.sm}
                   lh={theme.lineHeights.sm}
+                  truncate={true}
                 >
                   {item.title}
                 </Anchor>
               ))}
             </Breadcrumbs>
+
             <MovieCard
               size="lg"
               id={details.id}
@@ -87,7 +89,7 @@ const MoviePage = ({ params }: { params: { id: string } }) => {
               vote_count={details.vote_count ?? 0}
               genre_ids={genreIds}
             >
-              <Grid>
+              <Grid styles={{ inner: { flexWrap: 'nowrap' } }}>
                 <Grid.Col span="content" px={10}>
                   <Stack gap="sm">
                     {movieCardDetailsLabels.map((label, index) => (
@@ -96,7 +98,7 @@ const MoviePage = ({ params }: { params: { id: string } }) => {
                   </Stack>
                 </Grid.Col>
 
-                <Grid.Col span="content" px={10}>
+                <Grid.Col span="content" px={10} maw={{ base: 120, xs: '100%' }}>
                   <Stack gap="sm">
                     {movieCardDetailsValues.map((value, index) => (
                       <MovieDescriptionValue key={index}>{value}</MovieDescriptionValue>

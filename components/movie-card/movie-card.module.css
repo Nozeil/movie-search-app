@@ -17,6 +17,11 @@
 
 .img {
   flex-shrink: 0;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    height: 170px;
+    width: 120px;
+  }
 }
 
 :where([data-mantine-color-scheme='light'])

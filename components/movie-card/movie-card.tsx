@@ -46,21 +46,23 @@ export const MovieCard = ({
 
   const theme = useMantineTheme();
 
-  const { height, imgWidth, paperWidth, stackWidth, component } =
+  const { height, imgWidth, paperWidth, stackWidth, component, imgHeight } =
     size === 'md'
       ? {
           component: Link,
           height: HEIGHT_MD,
           imgWidth: 120,
+          imgHeight: HEIGHT_MD,
           paperWidth: { base: 283, xl: 482 },
           stackWidth: { base: 200, xl: 240 },
         }
       : {
           component: undefined,
-          height: HEIGHT_LG,
+          height: { xl: HEIGHT_LG },
+          imgHeight: HEIGHT_LG,
           imgWidth: 250,
           paperWidth: '100%',
-          stackWidth: '100%',
+          stackWidth: { base: 200, xl: '100%' },
         };
 
   const handleSave = (userRating: number) => {
@@ -104,7 +106,7 @@ export const MovieCard = ({
           <Image
             className={styles.img}
             width={imgWidth}
-            height={height}
+            height={imgHeight}
             src={poster_path ? `${BASE_API_IMAGE_URL}${poster_path}` : '/no-poster-sm.svg'}
             alt="poster"
           />
