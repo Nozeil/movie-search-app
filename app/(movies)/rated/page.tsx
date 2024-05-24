@@ -11,7 +11,7 @@ import { PAGE_TITLES } from '@/constants/constants';
 import { useRatedMoviesStore } from '@/stores/rated-store';
 import { getRatedMovies } from '@/utils/get-rated-movies';
 
-const Rated = () => {
+const RatedPage = () => {
   const ratedMovies = useRatedMoviesStore.use.ratedMovies();
   const lsRatedMovies = getRatedMovies();
 
@@ -30,4 +30,4 @@ const Rated = () => {
   );
 };
 
-export default Rated;
+export default RatedPage;

@@ -3,6 +3,7 @@
 import { useDiscoverMovies } from '@/hooks/use-discover-movies';
 import { useMoviesStore } from '@/stores/movie-filters-store/movies-store';
 
+import { Loader } from './loader/loader';
 import { MoviesCards } from './movies-cards/movies-cards';
 import { ThreePagesPagination } from './three-pages-pagination';
 
@@ -12,7 +13,11 @@ export const MoviesCardsWithPagination = () => {
   const page = useMoviesStore.use.page();
   const setPage = useMoviesStore.use.setPage();
 
-  const { data: movies } = useDiscoverMovies(page);
+  const { data: movies, isFetching } = useDiscoverMovies(page);
+
+  if (isFetching) {
+    return <Loader />;
+  }
 
   let total = 0;
 

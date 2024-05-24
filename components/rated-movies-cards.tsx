@@ -15,7 +15,7 @@ export const RatedMoviesCards = () => {
   const movies = paginatedMovies.length ? paginatedMovies[page - 1] : [];
 
   return (
-    <Stack gap="md" align="center" justify="center">
+    <Stack gap="md" align="center" justify="center" w="100%">
       <MoviesCards movies={movies} />
       <ThreePagesPagination total={paginatedMovies.length} page={page} onChange={setPage} />
     </Stack>

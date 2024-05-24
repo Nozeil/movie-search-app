@@ -14,6 +14,7 @@ import Link from 'next/link';
 import { useMemo } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+import { Loader } from '@/components/loader/loader';
 import { MovieCard } from '@/components/movie-card/movie-card';
 import { MovieDescriptionLabel } from '@/components/movie-description-label/movie-description-label';
 import { MovieDescriptionValue } from '@/components/movie-description-value/movie-description-value';
@@ -27,7 +28,7 @@ import { formatMovieRuntime } from '@/utils/format-movie-runtime';
 const movieCardDetailsLabels = ['Duration', 'Premiere', 'Budget', 'Gross worldwide', 'Genres'];
 
 const MoviePage = ({ params }: { params: { id: string } }) => {
-  const { data: details } = useGetMovieDetails(params.id);
+  const { data: details, isLoading } = useGetMovieDetails(params.id);
   const theme = useMantineTheme();
 
   const breadcrumbsItems = [
@@ -54,62 +55,62 @@ const MoviePage = ({ params }: { params: { id: string } }) => {
     [details?.genres],
   );
 
-  if (!details) {
-    return null;
-  }
+  return isLoading ? (
+    <Loader />
+  ) : (
+    details && (
+      <Container size={800} p={0}>
+        <MovieDetailsContext.Provider value={details}>
+          <Stack gap={20}>
+            <Breadcrumbs>
+              {breadcrumbsItems.map((item) => (
+                <Anchor
+                  key={item.href}
+                  component={Link}
+                  href={item.href}
+                  underline="never"
+                  c={theme.colors.purple[5]}
+                  fz={theme.fontSizes.sm}
+                  lh={theme.lineHeights.sm}
+                >
+                  {item.title}
+                </Anchor>
+              ))}
+            </Breadcrumbs>
+            <MovieCard
+              size="lg"
+              id={details.id}
+              original_title={details.original_title ?? ''}
+              poster_path={details.poster_path ?? ''}
+              release_date={details.release_date ?? ''}
+              vote_average={details.vote_average ?? 0}
+              vote_count={details.vote_count ?? 0}
+              genre_ids={genreIds}
+            >
+              <Grid>
+                <Grid.Col span="content" px={10}>
+                  <Stack gap="sm">
+                    {movieCardDetailsLabels.map((label, index) => (
+                      <MovieDescriptionLabel key={index}>{label}</MovieDescriptionLabel>
+                    ))}
+                  </Stack>
+                </Grid.Col>
 
-  return (
-    <Container size={800} p={0}>
-      <MovieDetailsContext.Provider value={details}>
-        <Stack gap={20}>
-          <Breadcrumbs>
-            {breadcrumbsItems.map((item) => (
-              <Anchor
-                key={item.href}
-                component={Link}
-                href={item.href}
-                underline="never"
-                c={theme.colors.purple[5]}
-                fz={theme.fontSizes.sm}
-                lh={theme.lineHeights.sm}
-              >
-                {item.title}
-              </Anchor>
-            ))}
-          </Breadcrumbs>
-          <MovieCard
-            size="lg"
-            id={details.id}
-            original_title={details.original_title ?? ''}
-            poster_path={details.poster_path ?? ''}
-            release_date={details.release_date ?? ''}
-            vote_average={details.vote_average ?? 0}
-            vote_count={details.vote_count ?? 0}
-            genre_ids={genreIds}
-          >
-            <Grid>
-              <Grid.Col span="content" px={10}>
-                <Stack gap="sm">
-                  {movieCardDetailsLabels.map((label, index) => (
-                    <MovieDescriptionLabel key={index}>{label}</MovieDescriptionLabel>
-                  ))}
-                </Stack>
-              </Grid.Col>
+                <Grid.Col span="content" px={10}>
+                  <Stack gap="sm">
+                    {movieCardDetailsValues.map((value, index) => (
+                      <MovieDescriptionValue key={index}>{value}</MovieDescriptionValue>
+                    ))}
+                  </Stack>
+                </Grid.Col>
+              </Grid>
+            </MovieCard>
 
-              <Grid.Col span="content" px={10}>
-                <Stack gap="sm">
-                  {movieCardDetailsValues.map((value, index) => (
-                    <MovieDescriptionValue key={index}>{value}</MovieDescriptionValue>
-                  ))}
-                </Stack>
-              </Grid.Col>
-            </Grid>
-          </MovieCard>
-
-          <MovieInfo />
-        </Stack>
-      </MovieDetailsContext.Provider>
-    </Container>
+            <MovieInfo />
+          </Stack>
+        </MovieDetailsContext.Provider>
+      </Container>
+    )
   );
 };
 
