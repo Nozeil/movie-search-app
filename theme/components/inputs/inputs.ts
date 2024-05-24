@@ -13,6 +13,7 @@ export const inputs: MantineThemeOverride['components'] = {
         return {
           wrapper: {
             '--input-fz': theme.fontSizes.sm,
+            '--input-padding-inline-start': theme.spacing.sm,
           },
         };
       }

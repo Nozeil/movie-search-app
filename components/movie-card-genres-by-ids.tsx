@@ -3,7 +3,7 @@
 import { Group } from '@mantine/core';
 import { useMemo } from 'react';
 
-import { useGetMovieList } from '@/hooks/useGetMovieList';
+import { useGetMovieList } from '@/hooks/use-get-movie-list';
 import type { Movie } from '@/models/index';
 import { createGenreNames } from '@/utils/create-genre-names';
 

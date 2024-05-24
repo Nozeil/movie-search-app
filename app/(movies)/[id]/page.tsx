@@ -24,6 +24,8 @@ import { createGenreNames } from '@/utils/create-genre-names';
 import { formatMoviePremiereDate } from '@/utils/format-movie-premiere-date';
 import { formatMovieRuntime } from '@/utils/format-movie-runtime';
 
+const movieCardDetailsLabels = ['Duration', 'Premiere', 'Budget', 'Gross worldwide', 'Genres'];
+
 const MoviePage = ({ params }: { params: { id: string } }) => {
   const { data: details } = useGetMovieDetails(params.id);
   const theme = useMantineTheme();
@@ -39,7 +41,6 @@ const MoviePage = ({ params }: { params: { id: string } }) => {
     },
   ];
 
-  const movieCardDetailsLabels = ['Duration', 'Premiere', 'Budget', 'Gross worldwide', 'Genres'];
   const movieCardDetailsValues = [
     formatMovieRuntime(details?.runtime ?? 0),
     formatMoviePremiereDate(details?.release_date ?? ''),

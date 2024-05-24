@@ -3,7 +3,7 @@
 import { type ComboboxProps } from '@mantine/core';
 import { useCallback, useMemo } from 'react';
 
-import { useGetMovieList } from '@/hooks/useGetMovieList';
+import { useGetMovieList } from '@/hooks/use-get-movie-list';
 import { useMoviesStore } from '@/stores/movie-filters-store/movies-store';
 
 import { MultiSelectInputBase } from './multi-select-input-base/multi-select-input-base';

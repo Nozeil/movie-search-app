@@ -18,3 +18,5 @@ export type MoviePick = Pick<
 export type PartialMoviePick = Partial<MoviePick> & Pick<Movie, 'id'>;
 
 export type VideoHosts = (typeof VIDEO_HOSTS)[keyof typeof VIDEO_HOSTS];
+
+export type RatedMovie = { userRating: number } & PartialMoviePick;

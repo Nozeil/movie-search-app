@@ -8,7 +8,7 @@ import { SortSelect } from '@/components/sort-select';
 import { PAGE_TITLES } from '@/constants/constants';
 
 const MoviesPage = () => (
-  <PageWrapper size={980} p={0}>
+  <PageWrapper>
     <PageTitle>{PAGE_TITLES.MOVIES}</PageTitle>
 
     <Stack align="end" gap="lg">

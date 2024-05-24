@@ -21,7 +21,9 @@ export const RatingModal = ({
 }: RatingModalProps) => {
   const [rating, setRating] = useState(ratingDefaultValue ?? 0);
 
-  const handleSave = () => onSave(rating);
+  const handleSave = () => {
+    onSave(rating);
+  };
   const handleRemove = () => {
     setRating(0);
     onRemove();
@@ -41,6 +43,7 @@ export const RatingModal = ({
       radius="md"
       overlayProps={{ backgroundOpacity: 0.2 }}
       closeButtonProps={{ size: 'sm' }}
+      onClick={(e) => e.preventDefault()}
       {...props}
     >
       <FocusTrap.InitialFocus />

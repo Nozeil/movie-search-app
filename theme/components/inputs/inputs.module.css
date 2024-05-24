@@ -1,5 +1,5 @@
 .input:global(.mantine-Input-input) {
-  padding-left: var(--mantine-spacing-sm);
+  font-size: var(--mantine-font-size-sm);
   border-color: var(--mantine-color-grey-3);
   caret-color: var(--mantine-color-purple-5);
   transition: var(--ease-in-out-300);

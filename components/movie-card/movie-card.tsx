@@ -5,10 +5,10 @@ import { useDisclosure } from '@mantine/hooks';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { type MouseEventHandler, type ReactNode, useMemo } from 'react';
 
 import { BASE_API_IMAGE_URL } from '@/constants/constants';
-import { useLocalStorageRatedStore } from '@/hooks/useLocalStorageRatedStore';
+import { useRatedMoviesStore } from '@/stores/rated-store';
 import type { MoviePick } from '@/typings/index';
 import { formatCompactNumber } from '@/utils/format-compact-number';
 
@@ -38,8 +38,12 @@ export const MovieCard = ({
   children,
   size = 'md',
 }: MovieCardProps) => {
-  const { addMovie, removeMovie, getMovieRating } = useLocalStorageRatedStore(id);
+  const addMovie = useRatedMoviesStore.use.addMovie();
+  const removeMovie = useRatedMoviesStore.use.removeMovie();
+  const ratedMovies = useRatedMoviesStore.use.ratedMovies();
+
   const [opened, { open, close }] = useDisclosure(false);
+
   const theme = useMantineTheme();
 
   const { height, imgWidth, paperWidth, stackWidth, component } =
@@ -74,14 +78,24 @@ export const MovieCard = ({
   };
 
   const handleRemove = () => {
-    removeMovie();
+    removeMovie(id);
     close();
+  };
+
+  const handleAddRated: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.preventDefault();
+
+    open();
   };
 
   const releaseYear = release_date.split('-').at(0);
   const movieRating = +vote_average.toFixed(1);
   const votesCountCompact = formatCompactNumber(vote_count);
-  const ratedMovieRating = getMovieRating();
+
+  const ratedMovieRating = useMemo(
+    () => ratedMovies.find((ratedMovie) => ratedMovie.id === id)?.userRating,
+    [id, ratedMovies],
+  );
 
   return (
     <PaperBasedWrapper component={component} href={`/${id}`} c={theme.black} w={paperWidth}>
@@ -119,7 +133,7 @@ export const MovieCard = ({
             />
 
             <UserRatingButton
-              onClick={open}
+              onClick={handleAddRated}
               ratingProps={{
                 classNames: {
                   label: styles.label,
