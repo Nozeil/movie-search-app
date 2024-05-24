@@ -1,0 +1,8 @@
+.label {
+  line-height: var(--mantine-line-height-xss);
+  color: var(--mantine-color-grey-6);
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    font-size: var(--mantine-font-size-sm);
+  }
+}

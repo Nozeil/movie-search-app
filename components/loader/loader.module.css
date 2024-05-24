@@ -1,0 +1,13 @@
+.group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: var(--mantine-color-grey-1);
+  z-index: 1000;
+}
+
+.loader span {
+  background-color: var(--mantine-color-purple-5);
+}

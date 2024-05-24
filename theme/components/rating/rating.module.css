@@ -1,0 +1,5 @@
+:where([data-mantine-color-scheme='light'])
+  .starSymbol:global(.mantine-Rating-starSymbol:not([data-filled='true'])) {
+  fill: var(--mantine-color-grey-3);
+  stroke: var(--mantine-color-grey-3);
+}

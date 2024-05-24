@@ -1,0 +1,4 @@
+.root {
+  flex-basis: 50%;
+  min-width: rem(283px);
+}

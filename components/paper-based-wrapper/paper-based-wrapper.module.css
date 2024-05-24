@@ -1,0 +1,8 @@
+.paper {
+  padding: var(--mantine-spacing-lg);
+  border-radius: var(--radius-12);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    padding: var(--mantine-spacing-md);
+  }
+}

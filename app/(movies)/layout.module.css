@@ -1,0 +1,40 @@
+.main {
+  background-color: var(--mantine-color-grey-1);
+}
+
+.container {
+  display: flex;
+  min-height: 100dvh;
+  padding: var(--mantine-spacing-xl) var(--spacing-90);
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    padding: var(--mantine-spacing-lg);
+  }
+
+  @media (max-width: $mantine-breakpoint-md) {
+    padding: var(--mantine-spacing-md);
+  }
+}
+
+.navbar {
+  padding: var(--mantine-spacing-lg);
+  background-color: var(--mantine-color-purple-1);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    max-width: rem(240px);
+  }
+}
+
+.burgerBox {
+  @media (max-width: $mantine-breakpoint-md) {
+    position: fixed;
+    bottom: var(--mantine-spacing-lg);
+    right: var(--mantine-spacing-lg);
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--mantine-color-grey-2);
+    border-radius: 50%;
+    background-color: var(--mantine-color-white);
+    z-index: 10;
+  }
+}

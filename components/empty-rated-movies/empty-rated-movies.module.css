@@ -1,0 +1,6 @@
+.img {
+  @media (max-width: $mantine-breakpoint-xs) {
+    width: 300px;
+    height: 200px;
+  }
+}

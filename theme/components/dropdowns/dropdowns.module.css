@@ -1,0 +1,26 @@
+.comboboxDropdown:global(.mantine-Combobox-dropdown),
+.selectDropdown:global(.mantine-Select-dropdown) {
+  border: none;
+  border-radius: var(--mantine-radius-md);
+}
+
+.comboboxOption:global(.mantine-Combobox-option),
+.selectOption:global(.mantine-Select-option) {
+  padding: var(--mantine-spacing-xss);
+  line-height: var(--mantine-line-height-xs);
+  border-radius: var(--mantine-radius-md);
+  transition: var(--ease-in-out-300);
+
+  @mixin hover {
+    padding-left: var(--mantine-spacing-sm);
+    padding-right: var(--mantine-spacing-sm);
+    background-color: var(--mantine-color-purple-1);
+  }
+
+  &[data-combobox-active] {
+    padding-left: var(--mantine-spacing-sm);
+    padding-right: var(--mantine-spacing-sm);
+    color: var(--mantine-color-white);
+    background-color: var(--mantine-color-purple-5);
+  }
+}

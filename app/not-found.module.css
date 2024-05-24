@@ -1,0 +1,29 @@
+.group {
+  position: relative;
+  width: 100dvw;
+  height: 100dvh;
+  padding: var(--mantine-spacing-xs);
+  background-color: var(--mantine-color-grey-1);
+}
+
+.logo {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.stack {
+  width: 100%;
+}
+
+.title {
+  margin-top: var(--spacing-36);
+  text-align: center;
+}
+
+.img {
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 300px;
+    height: 150px;
+  }
+}

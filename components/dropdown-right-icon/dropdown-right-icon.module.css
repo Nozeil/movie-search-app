@@ -1,0 +1,12 @@
+.icon {
+  transition: var(--ease-in-out-300);
+}
+
+.iconRotateTop {
+  stroke: var(--mantine-color-purple-5);
+  transform: rotate(180deg);
+}
+
+.iconRotateBottom {
+  transform: rotate(0);
+}

@@ -1,0 +1,20 @@
+.input:global(.mantine-Input-input) {
+  font-size: var(--mantine-font-size-sm);
+  border-color: var(--mantine-color-grey-3);
+  caret-color: var(--mantine-color-purple-5);
+  transition: var(--ease-in-out-300);
+
+  @mixin hover {
+    border-color: var(--mantine-color-purple-5);
+  }
+
+  &:focus,
+  &:focus-within {
+    border-color: var(--mantine-color-purple-5);
+  }
+}
+
+.placeholder:global(.mantine-InputPlaceholder-placeholder) {
+  color: var(--mantine-color-grey-5);
+  line-height: var(--mantine-line-height-xs);
+}

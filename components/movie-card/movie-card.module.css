@@ -1,0 +1,35 @@
+.title {
+  color: var(--mantine-color-purple-5);
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    font-size: var(--mantine-font-size-md);
+  }
+}
+
+.year,
+.votesCount {
+  color: var(--mantine-color-grey-6);
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    font-size: var(--mantine-font-size-sm);
+  }
+}
+
+.img {
+  flex-shrink: 0;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    height: 170px;
+    width: 120px;
+  }
+}
+
+:where([data-mantine-color-scheme='light'])
+  .starSymbol:global(.mantine-Rating-starSymbol:where([data-filled])) {
+  fill: var(--mantine-color-purple-5);
+  stroke: var(--mantine-color-purple-5);
+}
+
+.label {
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.scrollAreaAutosizeRoot {
+  max-height: rem(216px);
+}
+
+.scrollbar:global(.mantine-ScrollArea-scrollbar) {
+  padding: var(--spacing-0);
+
+  @mixin hover {
+    background-color: transparent;
+  }
+}
+
+.thumb:global(.mantine-ScrollArea-thumb) {
+  background-color: var(--mantine-color-grey-5);
+}
