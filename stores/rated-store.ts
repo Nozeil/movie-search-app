@@ -7,6 +7,7 @@ import createSelectors from '@/utils/create-selectors';
 import type { RatedMovie } from '../typings';
 
 type RatedState = {
+  search: string;
   page: number;
   ratedMovies: RatedMovie[];
   paginatedMovies: RatedMovie[][];
@@ -14,6 +15,7 @@ type RatedState = {
   removeMovie: (id: number) => void;
   setPage: (page: number) => void;
   setPaginatedMovies: (movies: RatedMovie[][]) => void;
+  setSearch: (search: string) => void;
 };
 
 const KEY = 'rated';
@@ -33,8 +35,8 @@ const useRatedMoviesStoreBase = create<RatedState>()(
     const rated = getRatedMovies();
 
     return {
+      search: '',
       page: 1,
-
       ratedMovies: rated,
 
       paginatedMovies: chunkArray<RatedMovie, RatedMovie[]>(rated, 4),
@@ -79,6 +81,17 @@ const useRatedMoviesStoreBase = create<RatedState>()(
       setPage: (page) => set(() => ({ page })),
 
       setPaginatedMovies: (movies) => set(() => ({ paginatedMovies: movies })),
+
+      setSearch: (search) =>
+        set(() => {
+          const searchedMovies = getRatedMovies().filter((movie) =>
+            movie.original_title?.toLowerCase().includes(search.toLowerCase()),
+          );
+
+          const paginated = chunkArray<RatedMovie, RatedMovie[]>(searchedMovies, 4);
+
+          return { page: 1, search, ratedMovies: searchedMovies, paginatedMovies: paginated };
+        }),
     };
   }),
 );
