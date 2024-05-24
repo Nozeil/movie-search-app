@@ -3,5 +3,8 @@
 }
 
 .container {
-  padding: var(--mantine-spacing-xl) var(--spacing-90) var(--spacing-82);
+  display: flex;
+  min-height: 100dvh;
+
+  padding: var(--mantine-spacing-xl) var(--spacing-90);
 }

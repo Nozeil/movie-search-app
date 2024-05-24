@@ -53,3 +53,5 @@ export const VIDEO_URLS = {
   [VIDEO_HOSTS.YOUTUBE]: 'https://www.youtube.com/embed/',
   [VIDEO_HOSTS.VIMEO]: 'https://player.vimeo.com/video/',
 } as const;
+
+export const RATED_LS_KEY = 'rated';

@@ -1,8 +1,10 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import { RATED_LS_KEY } from '@/constants/constants';
 import { chunkArray } from '@/utils/chunk-array';
 import createSelectors from '@/utils/create-selectors';
+import { getRatedMovies } from '@/utils/get-rated-movies';
 
 import type { RatedMovie } from '../typings';
 
@@ -18,16 +20,8 @@ type RatedState = {
   setSearch: (search: string) => void;
 };
 
-const KEY = 'rated';
-
-const getRatedMovies = (): RatedMovie[] => {
-  const ratedMovies = localStorage.getItem(KEY);
-
-  return ratedMovies ? JSON.parse(ratedMovies) : [];
-};
-
 const saveToStorage = (movies: RatedMovie[]) => {
-  localStorage.setItem(KEY, JSON.stringify(movies));
+  localStorage.setItem(RATED_LS_KEY, JSON.stringify(movies));
 };
 
 const useRatedMoviesStoreBase = create<RatedState>()(

@@ -3,7 +3,7 @@
 import { useDiscoverMovies } from '@/hooks/use-discover-movies';
 import { useMoviesStore } from '@/stores/movie-filters-store/movies-store';
 
-import { MoviesCards } from './movies-cards';
+import { MoviesCards } from './movies-cards/movies-cards';
 import { ThreePagesPagination } from './three-pages-pagination';
 
 const MAX_PAGES = 500;

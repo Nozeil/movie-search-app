@@ -7,7 +7,7 @@ type PageWrapperProps = {
 } & ContainerProps;
 
 export const PageWrapper = ({ children, stackProps, ...props }: PageWrapperProps) => (
-  <Container size={980} p={0} {...props}>
+  <Container size={980} p={0} pb={42} {...props}>
     <Stack gap="xl" {...stackProps}>
       {children}
     </Stack>
