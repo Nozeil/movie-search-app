@@ -1,11 +1,12 @@
 'use client';
 
-import { AspectRatio, Stack, Title } from '@mantine/core';
+import { AspectRatio } from '@mantine/core';
 import { MovieDetailsContext } from 'context/movie-details-context';
 import { useContext } from 'react';
 
 import { VIDEO_HOSTS, VIDEO_URLS } from '@/constants/constants';
 
+import { MovieInfoChildrenWrapper } from '../movie-info-children-wrapper/movie-info-children-wrapper';
 import styles from './trailer.module.css';
 
 const { YOUTUBE, VIMEO } = VIDEO_HOSTS;
@@ -31,11 +32,7 @@ export const Trailer = () => {
   }
 
   return (
-    <Stack>
-      <Title className={styles.title} order={4}>
-        Trailer
-      </Title>
-
+    <MovieInfoChildrenWrapper title="Trailer">
       <AspectRatio ratio={16 / 9} w={500}>
         <iframe
           className={styles.iframe}
@@ -45,6 +42,6 @@ export const Trailer = () => {
           allowFullScreen
         />
       </AspectRatio>
-    </Stack>
+    </MovieInfoChildrenWrapper>
   );
 };

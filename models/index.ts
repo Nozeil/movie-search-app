@@ -1,3 +1,5 @@
+import { Nullable } from '@/typings/utils';
+
 import type { VideoHosts } from '../typings';
 
 export type Genre = {
@@ -65,7 +67,12 @@ export type MovieDetails = {
   overview: string;
   popularity: number;
   poster_path: string;
-  production_companies: { id: number; logo_path: string; name: string; origin_country: string }[];
+  production_companies: {
+    id: number;
+    logo_path: Nullable<string>;
+    name: string;
+    origin_country: string;
+  }[];
   production_countries: string[];
   release_date: string;
   revenue: number;
