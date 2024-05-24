@@ -52,7 +52,7 @@ export const RatingModal = ({
         <Title order={5}>{title}</Title>
 
         <Rating
-          className={styles.ratingRoot}
+          classNames={{ root: styles.ratingRoot, starSymbol: styles.ratingStarSymbol }}
           count={10}
           size="lg"
           value={rating}

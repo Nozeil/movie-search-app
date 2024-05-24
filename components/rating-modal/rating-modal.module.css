@@ -17,3 +17,10 @@
   justify-content: space-between;
   width: 100%;
 }
+
+.ratingStarSymbol {
+  @media (max-width: $mantine-breakpoint-xs) {
+    width: var(--rating-size-md);
+    height: var(--rating-size-md);
+  }
+}

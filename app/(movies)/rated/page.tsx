@@ -2,7 +2,7 @@
 
 import { Group } from '@mantine/core';
 
-import { EmptyRatedMovies } from '@/components/empty-rated-movies';
+import { EmptyRatedMovies } from '@/components/empty-rated-movies/empty-rated-movies';
 import { PageTitle } from '@/components/page-title/page-title';
 import { PageWrapper } from '@/components/page-wrapper';
 import { RatedMoviesCards } from '@/components/rated-movies-cards';
